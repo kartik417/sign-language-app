@@ -18,7 +18,7 @@ function Translator() {
     try {
       setLoading(true);
 
-      const res = await axios.post("http://localhost:5000/api/translate", {
+      const res = await axios.post("https://sign-language-app-xetg.onrender.com/api/translate", {
         image: imageSrc,
       });
 
