@@ -9,7 +9,21 @@ const translateRoutes = require("./routes/translateRoutes");
 const app = express();
 
 // Connect Database
-connectDB();
+(async () => {
+  try {
+    await connectDB();
+    console.log("DB connected, starting server...");
+
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+      console.log("MONGO URI STATUS:", process.env.MONGO_URI ? "FOUND" : "NOT FOUND");
+    });
+
+  } catch (err) {
+    console.error("Startup Error:", err.message);
+  }
+})();
 
 // Middleware
 app.use(cors());
