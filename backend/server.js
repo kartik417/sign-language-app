@@ -1,4 +1,3 @@
-
 require("dotenv").config();
 
 const express = require("express");
@@ -8,35 +7,35 @@ const translateRoutes = require("./routes/translateRoutes");
 
 const app = express();
 
-// Connect Database
-(async () => {
-  try {
-    await connectDB();
-    console.log("DB connected, starting server...");
-
-    const PORT = process.env.PORT || 5000;
-    app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
-      console.log("MONGO URI STATUS:", process.env.MONGO_URI ? "FOUND" : "NOT FOUND");
-    });
-
-  } catch (err) {
-    console.error("Startup Error:", err.message);
-  }
-})();
-
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use("/api/translate", translateRoutes);
+
 // Routes
+app.use("/api/translate", translateRoutes);
+
 app.get("/", (req, res) => {
   res.send("API Running");
 });
 
-// Start server
+// 🔥 START SERVER (single place)
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-  console.log("MONGO URI STATUS:", process.env.MONGO_URI ? "FOUND" : "NOT FOUND");
-});
+
+const startServer = async () => {
+  try {
+    // ⚠️ OPTIONAL: agar Mongo issue aa raha hai to temporarily skip karo
+    // await connectDB();
+
+    console.log("DB connected");
+
+  } catch (err) {
+    console.log("Mongo Error:", err.message);
+    console.log("⚠️ Starting server WITHOUT DB (for ML demo)");
+  }
+
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+};
+
+startServer();

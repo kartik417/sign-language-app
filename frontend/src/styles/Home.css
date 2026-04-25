@@ -1,0 +1,283 @@
+/* Base */
+.home {
+  font-family: "Inter", sans-serif;
+}
+
+/* Navbar */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: #111;
+  color: #fff;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 42px;
+}
+
+.hero p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* Buttons */
+.btn-primary {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #ff7a18;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #e56700;
+}
+
+.btn-nav {
+  padding: 8px 16px;
+  background: #4CAF50;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Sections */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Flex Layout */
+.flex {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* Card */
+.card {
+  width: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 60px;/* Base */
+.home {
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+/* 🔥 Hero (Animated Gradient) */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(270deg, #667eea, #764ba2, #6a11cb);
+  background-size: 600% 600%;
+  animation: gradientMove 10s ease infinite;
+}
+
+.hero h1 {
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.hero p {
+  margin-top: 10px;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* 🔥 Gradient animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🔥 Floating glow effect */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero::before {
+  top: -60px;
+  left: -60px;
+}
+
+.hero::after {
+  bottom: -60px;
+  right: -60px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(25px); }
+}
+
+/* Buttons */
+.btn-primary {
+  margin-top: 25px;
+  padding: 12px 26px;
+  background: linear-gradient(135deg, #ff7a18, #ffb347);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.btn-nav {
+  padding: 8px 16px;
+  background: #4CAF50;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.btn-nav:hover {
+  background: #3a9d40;
+}
+
+/* Sections */
+.section {
+  padding: 70px 20px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.section:nth-child(even) {
+  background: #f9f9fb;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Flex Layout */
+.flex {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* Cards */
+.card {
+  width: 260px;
+  padding: 22px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 70px 20px;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: #fff;
+}
+
+/* Footer */
+.footer {
+  background: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+  background: #222;
+  color: #fff;
+}
+
+/* Footer */
+.footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
